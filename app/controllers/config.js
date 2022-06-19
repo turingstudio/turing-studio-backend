@@ -183,8 +183,8 @@ const config = {
       });
       fs.readFile('./tmp/dump.sql', 'utf8', function(err, data) {
         if (err) throw err;
-        // axios.put('http://localhost:4001/api/public/publish', {data});
-        axios.put('http://209.10.74.162:4001/api/public/publish', {data});
+          axios.put('http://localhost:4001/api/public/publish', {data});
+        // axios.put('http://209.10.74.162:4001/api/public/publish', {data});
       });
     },
   },
