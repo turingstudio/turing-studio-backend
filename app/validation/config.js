@@ -10,6 +10,7 @@ const getValidator = req => {
 const config = {
   ['/public/createApp']: { POST: undefined },
   ['/public/createAppTemplate']: { POST: undefined },
+  ['/public/createFormTemplate']: { POST: undefined },
   ['/public/createScreen']: { POST: undefined },
   ['/public/createScreenTemplate']: { POST: undefined },
   ['/public/createAppTemplateScreen']: { POST: undefined },

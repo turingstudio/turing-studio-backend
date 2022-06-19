@@ -41,6 +41,11 @@ const config = {
       sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
     },
   },
+  ['/public/createFormTemplate']: {
+    POST: async (req, res) => {
+      sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
+    },
+  },
   ['/public/createScreen']: {
     POST: async (req, res) => {
       sendResponse(res, await runStatement(res, req.conn, getStatement(req)))

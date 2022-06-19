@@ -15,6 +15,8 @@ const controller = require('@controllers/controller')
 
 router.post('/public/createApp', controller.main)
 router.post('/public/createAppTemplate', controller.main)
+router.post('/public/createFormTemplate', controller.main)
+router.post('/public/createScreenTemplate', controller.main)
 router.post('/public/createScreen', controller.main)
 router.post('/public/createScreenTemplate', controller.main)
 router.post('/public/createAppTemplateScreen', controller.main)

@@ -42,6 +42,17 @@ const insertAppTemplate = (args, updateList, body) => {
   `
 }
 
+const insertFormTemplate = (args, updateList, body) => {
+  console.log('insertFormTemplate updateList', updateList)
+  console.log('insertFormTemplate body', body)
+  const { name } = body
+  return `
+    INSERT INTO form_template 
+      (name, data) VALUES 
+        ('${name.replace(/'/g, "\\'")}', '${JSON.stringify({ data: [] })}')
+  `
+}
+
 const insertScreen = (args, updateList, body) => {
   console.log('insertScreen updateList', updateList)
   console.log('insertScreen body', body)
@@ -264,6 +275,7 @@ const config = {
   ['/public/createApp']: { POST: insertApp },
   ['/public/createAppTemplate']: { POST: insertAppTemplate },
   ['/public/createAppTemplateScreen']: { POST: insertAppTemplateScreen },
+  ['/public/createFormTemplate']: { POST: insertFormTemplate },
   ['/public/createScreen']: { POST: insertScreen },
   ['/public/createScreenTemplate']: { POST: insertScreenTemplate },
   ['/public/getAppTemplateScreen']: { GET: selectAppTemplateScreen },
