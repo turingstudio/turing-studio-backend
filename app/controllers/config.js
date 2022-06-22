@@ -167,9 +167,9 @@ const config = {
       await mysqldump({
         connection: {
           host: 'localhost',
-          user: 'app_studio',
-          password: 'app_studio',
-          database: 'app_studio',
+          user: 'turing_studio',
+          password: 'turing_studio',
+          database: 'turing_studio',
         },
         dumpToFile: './tmp/dump.sql',
         dump: {
