@@ -72,8 +72,7 @@ const config = {
         }
       }
 
-      // return the screen
-      res.json({ message: 'testing' })
+      sendResponse(res, await runStatement(res, req.conn, `SELECT * FROM screen WHERE id = ${req.body.screenId}`))
     },
   },
   ['/public/createScreenTemplate']: {
