@@ -55,8 +55,30 @@ const config = {
     POST: async (req, res) => {
       console.log('/public/createScreenSubcomponent: req.body', req.body)
       const json = await runStatement(res, req.conn, `SELECT * FROM screen WHERE id = ${req.body.screenId}`, isObject)
+
+      console.log('parentId', req.body.data?.parentId)
       console.log('json', json)
-      // insert subcomponent json into screen component
+      console.log('json.content', json.content)
+      const jsonObject = JSON.parse(json.content)
+      const content = jsonObject.content
+      console.log('content', content)
+
+      for(let i = 0; i < content.length; i++) {
+        const component = content[i];
+        if (component.id === req.body.data?.parentId) {
+          console.log('========== FOUND COMPONENT ==========')
+          console.log('component', component)
+          if (!component.subcomponents) {
+            console.log('========== MAKING SUBCOMPONENT ==========')
+            component.subcomponents = []
+            component.foo = 'bar'
+          }
+          component.subcomponents.push(req.body.data)
+          console.log('component AFTER', component)
+        }
+      }
+
+      console.log('jsonObject AFTER', jsonObject)
       // save json
       // return the screen
 
