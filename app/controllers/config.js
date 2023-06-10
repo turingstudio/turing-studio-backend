@@ -71,14 +71,14 @@ const config = {
           if (!component.subcomponents) {
             console.log('========== MAKING SUBCOMPONENT ==========')
             component.subcomponents = []
-            component.foo = 'bar'
           }
           component.subcomponents.push(req.body.data)
           console.log('component AFTER', component)
+          content[i] = component
         }
       }
 
-      console.log('jsonObject AFTER', jsonObject)
+      console.log('jsonObject AFTER', JSON.stringify(jsonObject))
       // save json
       // return the screen
 
