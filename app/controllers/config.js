@@ -53,7 +53,6 @@ const config = {
   },
   ['/public/createScreenSubcomponent']: {
     POST: async (req, res) => {
-      // console.log('/public/createScreenSubcomponent: req.body', req.body)
       const json = await runStatement(res, req.conn, `SELECT * FROM screen WHERE id = ${req.body.screenId}`, isObject)
 
       const jsonObject = JSON.parse(json.content)
@@ -71,7 +70,6 @@ const config = {
           await runStatement(res, req.conn, `UPDATE screen set content = '${JSON.stringify(jsonObject)}' WHERE id = ${req.body.screenId}`, isObject)
         }
       }
-
       sendResponse(res, await runStatement(res, req.conn, `SELECT * FROM screen WHERE id = ${req.body.screenId}`))
     },
   },
