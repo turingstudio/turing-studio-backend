@@ -12,6 +12,7 @@ const config = {
   ['/public/createAppTemplate']: { POST: undefined },
   ['/public/createFormTemplate']: { POST: undefined },
   ['/public/createScreen']: { POST: undefined },
+  ['/public/createScreenSubcomponent']: { POST: undefined },
   ['/public/createScreenTemplate']: { POST: undefined },
   ['/public/createAppTemplateScreen']: { POST: undefined },
   ['/public/getApp']: { GET: undefined },

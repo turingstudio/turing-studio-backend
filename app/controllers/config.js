@@ -51,6 +51,14 @@ const config = {
       sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
     },
   },
+  ['/public/createScreenSubcomponent']: {
+    POST: async (req, res) => {
+      console.log('/public/createScreenSubcomponent: req.body', req.body)
+      // insert subcomponent json into component
+      // sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
+      res.json({ message: 'testing' })
+    },
+  },
   ['/public/createScreenTemplate']: {
     POST: async (req, res) => {
       sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
