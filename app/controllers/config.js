@@ -54,8 +54,12 @@ const config = {
   ['/public/createScreenSubcomponent']: {
     POST: async (req, res) => {
       console.log('/public/createScreenSubcomponent: req.body', req.body)
-      // insert subcomponent json into component
-      // sendResponse(res, await runStatement(res, req.conn, getStatement(req)))
+      const json = await runStatement(res, req.conn, `SELECT * FROM screen WHERE id = ${req.body.screenId}`, isObject)
+      console.log('json', json)
+      // insert subcomponent json into screen component
+      // save json
+      // return the screen
+
       res.json({ message: 'testing' })
     },
   },
